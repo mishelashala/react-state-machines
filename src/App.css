@@ -1,38 +1,83 @@
-.App {
+.search-form {
+  margin-bottom: 1rem;
+}
+.search-input {
+  border: 2px solid #cacaca;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.emptyList {
+  font-family: arial;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 2rem 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.retry {
+  font-family: arial;
+  text-align: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.retry p {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.retry button {
+  background-color: #3fcfff;
+  border: none;
   color: white;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes loadingAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bookItem.loading {
+  background-color: #efefef;
+  animation: loadingAnimation 1s ease-in infinite;
+}
+
+.bookItem {
+  align-items: flex-start;
+  background-color: #d4f4ff;
+  box-sizing: border-box;
+  display: flex;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+}
+.bookItem-cover {
+  background-color: #c4c4c4;
+  object-fit: cover;
+  height: 48px;
+  width: 48px;
+}
+.bookItem-content {
+  box-sizing: border-box;
+  padding-left: 0.5rem;
+}
+.bookItem-content h2,
+.bookItem-content p {
+  font-family: arial;
+  margin: 0;
+}
+
+.bookItem-content h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+.bookItem-content p {
+  color: #7d7d7d;
+  font-size: 1rem;
 }
